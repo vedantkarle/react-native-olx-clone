@@ -1,38 +1,46 @@
 import { Formik } from "formik";
 import React from "react";
 import { Image, StyleSheet } from "react-native";
-import AppButton from "../components/AppButton";
-import AppTextInput from "../components/AppTextInput";
+import * as Yup from "yup";
+import AppFormField from "../components/AppFormField";
+import AppText from "../components/AppText";
 import Screen from "../components/Screen";
+import SubmitButton from "../components/SubmitButton";
+import colors from "../config/colors";
+
+const validationSchema = Yup.object({
+	email: Yup.string().required().email().label("Email"),
+	password: Yup.string().required().min(6).label("Password"),
+});
 
 export default function LoginScreen() {
 	return (
 		<Screen style={styles.container}>
 			<Image style={styles.logo} source={require("../assets/logo-red.png")} />
+			<AppText style={styles.loginText}>LOGIN</AppText>
 			<Formik
 				initialValues={{ email: "", password: "" }}
-				onSubmit={values => console.log(values)}>
-				{({ handleChange, handleSubmit }) => (
+				onSubmit={values => console.log(values)}
+				validationSchema={validationSchema}>
+				{() => (
 					<>
-						<AppTextInput
+						<AppFormField
 							autoCapitalize='none'
 							icon='email'
 							placeholder='Email'
 							autoCorrect={false}
-							keyboardType='email-address'
-							textContentType='emailAddress'
-							onChangeText={handleChange("email")}
+							name='email'
 						/>
-						<AppTextInput
+						<AppFormField
 							autoCapitalize='none'
 							icon='lock'
 							placeholder='Password'
 							autoCorrect={false}
 							secureTextEntry
 							textContentType='password'
-							onChangeText={handleChange("password")}
+							name='password'
 						/>
-						<AppButton title='Login' onPress={handleSubmit} color='primary' />
+						<SubmitButton title='Login' />
 					</>
 				)}
 			</Formik>
@@ -50,5 +58,11 @@ const styles = StyleSheet.create({
 		alignSelf: "center",
 		marginTop: 50,
 		marginBottom: 20,
+	},
+	loginText: {
+		alignSelf: "center",
+		color: colors.primary,
+		fontSize: 30,
+		marginTop: 10,
 	},
 });
