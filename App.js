@@ -1,5 +1,5 @@
 import { useState } from "react";
-import LoginScreen from "./app/screens/LoginScreen";
+import MessagesScreen from "./app/screens/MessagesScreen";
 
 const categories = [
 	{
@@ -19,5 +19,5 @@ const categories = [
 export default function App() {
 	const [category, setCategory] = useState("");
 
-	return <LoginScreen />;
+	return <MessagesScreen />;
 }

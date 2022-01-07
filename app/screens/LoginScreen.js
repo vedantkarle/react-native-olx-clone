@@ -1,11 +1,11 @@
 import React from "react";
 import { Image, StyleSheet } from "react-native";
 import * as Yup from "yup";
-import AppForm from "../components/AppForm";
-import AppFormField from "../components/AppFormField";
 import AppText from "../components/AppText";
+import AppForm from "../components/Form/AppForm";
+import AppFormField from "../components/Form/AppFormField";
+import SubmitButton from "../components/Form/SubmitButton";
 import Screen from "../components/Screen";
-import SubmitButton from "../components/SubmitButton";
 import colors from "../config/colors";
 
 const validationSchema = Yup.object({

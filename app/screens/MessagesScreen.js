@@ -8,14 +8,15 @@ import Screen from "../components/Screen";
 const initialMessages = [
 	{
 		id: 1,
-		title: "T1",
-		description: "D1",
+		title: "Vedant Karle",
+		description: "Hey is this avaliable?",
 		image: require("../assets/profile.jpg"),
 	},
 	{
 		id: 2,
 		title: "T2",
-		description: "D2",
+		description:
+			"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pretium lacinia risus. Donec id nisl id diam commodo imperdiet et eget metus. Vivamus velit metus, feugiat at suscipit facilisis, mattis ut tellus. Sed vel facilisis ligula, at luctus mi. Aliquam erat volutpat. Sed ac felis ut nulla porta elementum quis sed nibh. Integer hendrerit tellus ac elit feugiat, ut mollis urna finibus. Nulla mauris lacus, ultricies tincidunt facilisis sed, fringilla efficitur dui. Proin tempus vehicula rhoncus. Suspendisse convallis non lectus et tempus. Donec nibh ex, consequat in risus non, varius varius mauris. Nullam varius enim diam, at molestie felis lacinia vitae. Fusce lacus erat, finibus at placerat a, cursus ut mi. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
 		image: require("../assets/profile.jpg"),
 	},
 ];
