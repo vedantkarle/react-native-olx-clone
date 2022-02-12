@@ -1,5 +1,5 @@
 import { useState } from "react";
-import MessagesScreen from "./app/screens/MessagesScreen";
+import ListingEditScreen from "./app/components/ListingEditScreen";
 
 const categories = [
 	{
@@ -19,5 +19,5 @@ const categories = [
 export default function App() {
 	const [category, setCategory] = useState("");
 
-	return <MessagesScreen />;
+	return <ListingEditScreen />;
 }

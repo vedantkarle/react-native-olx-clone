@@ -3,7 +3,7 @@ import React from "react";
 import AppTextInput from "../AppTextInput";
 import ErrorMessage from "./ErrorMessage";
 
-export default function AppFormField({ name, ...otherProps }) {
+export default function AppFormField({ name, width, ...otherProps }) {
 	const { setFieldTouched, handleChange, errors, touched } = useFormikContext();
 
 	return (
@@ -11,6 +11,7 @@ export default function AppFormField({ name, ...otherProps }) {
 			<AppTextInput
 				{...otherProps}
 				onChangeText={handleChange(name)}
+				width={width}
 				onBlur={() => setFieldTouched(name)}
 			/>
 			{errors[name] && touched[name] && <ErrorMessage error={errors[name]} />}
