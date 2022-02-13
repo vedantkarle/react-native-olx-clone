@@ -5,7 +5,7 @@ import Icon from "./Icon";
 
 const CategoryPickerItem = ({ item, onPressed }) => {
 	return (
-		<View style={styles.container}>
+		<View style={styles.container} onPress={onPressed}>
 			<Icon backgroundColor={item.backgroundColor} name={item.icon} size={80} />
 			<AppText style={styles.label}>{item.label}</AppText>
 		</View>

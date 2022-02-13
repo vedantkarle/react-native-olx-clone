@@ -1,23 +1,13 @@
 import { useState } from "react";
-import ListingEditScreen from "./app/components/ListingEditScreen";
-
-const categories = [
-	{
-		label: "Furniture",
-		value: 1,
-	},
-	{
-		label: "Clothing",
-		value: 2,
-	},
-	{
-		label: "Cameras",
-		value: 3,
-	},
-];
+import ImageInput from "./app/components/ImageInput";
+import Screen from "./app/components/Screen";
 
 export default function App() {
-	const [category, setCategory] = useState("");
+	const [imageUri, setImageUri] = useState(null);
 
-	return <ListingEditScreen />;
+	return (
+		<Screen>
+			<ImageInput imageUri={imageUri} onChangeImage={uri => setImageUri(uri)} />
+		</Screen>
+	);
 }
