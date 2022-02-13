@@ -1,6 +1,6 @@
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import * as ImagePicker from "expo-image-picker";
-import React, { useEffect } from "react";
+import React from "react";
 import {
 	Alert,
 	Image,
@@ -11,11 +11,6 @@ import {
 import colors from "../config/colors";
 
 const ImageInput = ({ imageUri, onChangeImage }) => {
-	const reqPermisson = async () => {
-		const { granted } = await ImagePicker.requestMediaLibraryPermissionsAsync();
-		if (!granted) alert("You need to enable permission to access the library");
-	};
-
 	const selectImage = async () => {
 		try {
 			const res = await ImagePicker.launchImageLibraryAsync({
@@ -42,10 +37,6 @@ const ImageInput = ({ imageUri, onChangeImage }) => {
 				},
 			]);
 	};
-
-	useEffect(() => {
-		reqPermisson();
-	}, []);
 
 	return (
 		<TouchableWithoutFeedback onPress={handlePress}>
