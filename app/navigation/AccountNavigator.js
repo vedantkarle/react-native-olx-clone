@@ -7,7 +7,7 @@ const Stack = createNativeStackNavigator();
 
 const AccountNavigator = () => {
 	return (
-		<Stack.Navigator mode='modal'>
+		<Stack.Navigator>
 			<Stack.Screen name={routes.ACCOUNT} component={AccountScreen} />
 			<Stack.Screen name={routes.MESSAGES} component={MessagesScreen} />
 		</Stack.Navigator>
