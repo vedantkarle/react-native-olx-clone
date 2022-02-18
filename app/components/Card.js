@@ -8,7 +8,7 @@ import {
 import colors from "../config/colors";
 import AppText from "./AppText";
 
-export default Card = ({ title, subTitle, imageUrl, onPress }) => {
+export default Card = ({ title, subTitle, imageUrl, thumbnail, onPress }) => {
 	return (
 		<TouchableWithoutFeedback onPress={onPress}>
 			<View style={styles.card}>

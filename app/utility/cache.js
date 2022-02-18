@@ -11,7 +11,7 @@ const store = async (key, value) => {
 			timestamp: Date.now(),
 		};
 
-		await AsyncStorage.setItem(prefix + key, item);
+		await AsyncStorage.setItem(prefix + key, JSON.stringify(item));
 	} catch (error) {
 		console.error(error);
 	}
